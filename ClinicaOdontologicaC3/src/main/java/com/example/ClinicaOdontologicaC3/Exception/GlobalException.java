@@ -12,7 +12,7 @@ public class GlobalException {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("mensaje: "+rnfe.getMessage());
     }
 
-    @ExceptionHandler({ResourceNotFoundException.class})
+    @ExceptionHandler({CustomBadRequestException.class})
     public ResponseEntity<String> tratamientoCustomBadRequestException(CustomBadRequestException cbre){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("mensaje: "+cbre.getMessage());
     }
